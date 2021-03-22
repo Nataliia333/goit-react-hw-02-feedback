@@ -4,6 +4,7 @@ import Statistics from './components/Statistics/Statistics';
 import Section from './components/Section/Section';
 
 import { FEEDBACK_OPTIONS } from './data/constans';
+import Container from './components/Container/Container';
 
 class App extends Component {
   state = {
@@ -35,21 +36,23 @@ class App extends Component {
 
     return (
       <div>
-        <Section title="Please leave feedback">
-          <FeedbackOptions
-            options={FEEDBACK_OPTIONS}
-            onLeaveFeedback={this.handleFeedback}
-          />
-        </Section>
-        <Section title="Statistics">
-          <Statistics
-            good={good}
-            neutral={neutral}
-            bad={bad}
-            total={total}
-            positivePercentage={positivePercentage}
-          />
-        </Section>
+        <Container>
+          <Section title="Please leave feedback">
+            <FeedbackOptions
+              options={FEEDBACK_OPTIONS}
+              onLeaveFeedback={this.handleFeedback}
+            />
+          </Section>
+          <Section title="Statistics">
+            <Statistics
+              good={good}
+              neutral={neutral}
+              bad={bad}
+              total={total}
+              positivePercentage={positivePercentage}
+            />
+          </Section>
+        </Container>
       </div>
     );
   }
